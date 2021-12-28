@@ -1,0 +1,86 @@
+﻿@model IEnumerable<TamirhaneMVC.MusteriArac>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Müşteri-Araç Listesi</h2>
+<hr />
+
+<p class="text-right">
+    @Html.ActionLink("Yeni Kayıt", "Create", null, new { @class = "btn btn-primary" })
+</p>
+@if (ViewBag.Message != null)
+{
+
+    <div class="alert alert-success" role="alert">
+        @ViewBag.Message
+    </div>
+}
+<hr />
+<table class="table table-striped table-bordered table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MusteriAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MusteriSoyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MusteriTel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AracMarka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AracModel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AracPlaka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToplamUcret)
+        </th>
+        <th></th>
+    </tr>
+    @if (Model != null && Model.Count() > 0)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MusteriAd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MusteriSoyad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MusteriTel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AracMarka)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AracModel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AracPlaka)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ToplamUcret)
+                </td>
+                <td width="220px">
+                    @Html.ActionLink("Güncelle", "Edit", new { id = item.MusteriID }, new { @class = "btn btn-success" }) 
+                    @Html.ActionLink("Detay", "Detail", new { id = item.MusteriID }, new { @class = "btn btn-info" }) 
+                    @Html.ActionLink("Sil", "Delete", new { id = item.MusteriID }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    }
+    else
+    {
+        <td colspan="4" class="text-center">
+            <b>Kayıt yok.Lütfen Kayıt ekleyin!</b>
+        </td>
+    }
+</table>

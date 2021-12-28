@@ -1,0 +1,105 @@
+﻿@model TamirhaneMVC.MusteriArac
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>Detay Sayfası</h2>
+<hr />
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MusteriAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MusteriAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MusteriSoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MusteriSoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MusteriTel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MusteriTel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AracMarka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AracMarka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AracModel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AracModel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AracPlaka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AracPlaka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AracGirisTarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AracGirisTarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AracBitisTarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AracBitisTarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DegisenParca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DegisenParca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ToplamUcret)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ToplamUcret)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aciklama)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Güncelle", "Edit", new { id = Model.MusteriID }, new { @class = "btn btn-info" })
+    @Html.ActionLink("Listeye Geri Dönün", "Index", null, new { @class = "btn btn-primary" })
+</p>

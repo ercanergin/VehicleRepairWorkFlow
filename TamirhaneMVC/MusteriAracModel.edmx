@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TamirhaneDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MusteriArac">
+          <Key>
+            <PropertyRef Name="MusteriID" />
+          </Key>
+          <Property Name="MusteriID" Type="smallint" Nullable="false" />
+          <Property Name="MusteriAd" Type="varchar" MaxLength="50" />
+          <Property Name="MusteriSoyad" Type="varchar" MaxLength="50" />
+          <Property Name="MusteriTel" Type="varchar" MaxLength="20" />
+          <Property Name="AracMarka" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AracModel" Type="smallint" Nullable="false" />
+          <Property Name="AracPlaka" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="AracGirisTarih" Type="date" Nullable="false" />
+          <Property Name="AracBitisTarih" Type="date" Nullable="false" />
+          <Property Name="DegisenParca" Type="varchar" MaxLength="50" />
+          <Property Name="ToplamUcret" Type="varchar" MaxLength="20" />
+          <Property Name="Aciklama" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityContainer Name="TamirhaneDBModelStoreContainer">
+          <EntitySet Name="MusteriArac" EntityType="Self.MusteriArac" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TamirhaneDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MusteriArac">
+          <Key>
+            <PropertyRef Name="MusteriID" />
+          </Key>
+          <Property Name="MusteriID" Type="Int16" Nullable="false" />
+          <Property Name="MusteriAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MusteriSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MusteriTel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AracMarka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AracModel" Type="Int16" Nullable="false" />
+          <Property Name="AracPlaka" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AracGirisTarih" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="AracBitisTarih" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DegisenParca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ToplamUcret" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="TamirhaneDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MusteriAracs" EntityType="Self.MusteriArac" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TamirhaneDBModelStoreContainer" CdmEntityContainer="TamirhaneDBEntities">
+          <EntitySetMapping Name="MusteriAracs">
+            <EntityTypeMapping TypeName="TamirhaneDBModel.MusteriArac">
+              <MappingFragment StoreEntitySet="MusteriArac">
+                <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+                <ScalarProperty Name="MusteriAd" ColumnName="MusteriAd" />
+                <ScalarProperty Name="MusteriSoyad" ColumnName="MusteriSoyad" />
+                <ScalarProperty Name="MusteriTel" ColumnName="MusteriTel" />
+                <ScalarProperty Name="AracMarka" ColumnName="AracMarka" />
+                <ScalarProperty Name="AracModel" ColumnName="AracModel" />
+                <ScalarProperty Name="AracPlaka" ColumnName="AracPlaka" />
+                <ScalarProperty Name="AracGirisTarih" ColumnName="AracGirisTarih" />
+                <ScalarProperty Name="AracBitisTarih" ColumnName="AracBitisTarih" />
+                <ScalarProperty Name="DegisenParca" ColumnName="DegisenParca" />
+                <ScalarProperty Name="ToplamUcret" ColumnName="ToplamUcret" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
